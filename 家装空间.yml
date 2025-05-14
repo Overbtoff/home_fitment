@@ -1,0 +1,1180 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 联网搜索家居安装_2.0
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai_api_compatible:0.0.16@77274df8fe2632cac66bfd153fcc75aa5e96abbe92b5c611b8984ad9f4cd4457
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1746797398965'
+        sourceType: iteration-start
+        targetType: llm
+      id: 1746797398965start-source-1746797407824-target
+      source: 1746797398965start
+      sourceHandle: source
+      target: '1746797407824'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1746797398965'
+        sourceType: llm
+        targetType: code
+      id: 1746797407824-source-1746798461643-target
+      source: '1746797407824'
+      sourceHandle: source
+      target: '1746798461643'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: code
+      id: 1746797398965-source-1746803669588-target
+      source: '1746797398965'
+      sourceHandle: source
+      target: '1746803669588'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1746803669588-source-1746804995053-target
+      source: '1746803669588'
+      sourceHandle: source
+      target: '1746804995053'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1746805617115'
+        sourceType: iteration-start
+        targetType: llm
+      id: 1746805617115start-source-1746805939176-target
+      source: 1746805617115start
+      sourceHandle: source
+      target: '1746805939176'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: parameter-extractor
+      id: 1746793901295-source-1746806049812-target
+      source: '1746793901295'
+      sourceHandle: source
+      target: '1746806049812'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: iteration
+      id: 1746806049812-source-1746805617115-target
+      source: '1746806049812'
+      sourceHandle: source
+      target: '1746805617115'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1746805617115'
+        sourceType: llm
+        targetType: code
+      id: 1746805939176-source-1746806259993-target
+      source: '1746805939176'
+      sourceHandle: source
+      target: '1746806259993'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: iteration
+        targetType: iteration
+      id: 1746805617115-source-1746797398965-target
+      source: '1746805617115'
+      sourceHandle: source
+      target: '1746797398965'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1746793690951-source-1746973196324-target
+      source: '1746793690951'
+      sourceHandle: source
+      target: '1746973196324'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1746973196324-source-1746793901295-target
+      source: '1746973196324'
+      sourceHandle: source
+      target: '1746793901295'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: design
+          max_length: 8192
+          options: []
+          required: true
+          type: paragraph
+          variable: design
+        - label: budget
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: budget
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - image
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: floor_plan
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: floor_plan
+      height: 141
+      id: '1746793690951'
+      position:
+        x: -809.8698747192367
+        y: 224.10007990588937
+      positionAbsolute:
+        x: -809.8698747192367
+        y: 224.10007990588937
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: kimi
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        prompt_template:
+        - id: 9c2b0343-092c-433d-a72c-b442f9a91b32
+          role: system
+          text: '你是一个专业室内设计师助理，需要根据用户需求快速提取关键信息生成房间概览列表。请严格遵循以下规则：
+
+            输入要求：
+
+            [房间数量/名称]、[面积/尺寸]、[硬装需求]、[软装偏好]、[风格要求]、[特殊需求]
+
+            输出规则：
+
+            {
+
+            "rooms_overview": [
+
+            {
+
+            "name": "房间名称",
+
+            "area": "平方米数值",
+
+            "hardware_requirements": ["墙面处理需求","地面材质需求","重点硬装项目"],
+
+            "software_requirements": ["核心家具需求","重点装饰元素"],
+
+            "special_notes": ["特殊功能需求","特殊尺寸说明"]
+
+            }
+
+            ],
+
+            "style_keywords": ["主风格","次级风格"],
+
+            "priority_rooms": ["用户重点关注的房间名称"]
+
+            }
+
+            强制要求：
+
+            每个房间面积必须换算为平方米
+
+            识别出前3个风格关键词
+
+            至少标记2个重点房间
+
+            使用中文逗号分隔数组项
+
+            下面是用户输入：
+
+            {{#1746973196324.text#}}'
+        selected: false
+        title: 生成房间概览列表
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1746793901295'
+      position:
+        x: 173.80389727542342
+        y: 224.10007990588937
+      positionAbsolute:
+        x: 173.80389727542342
+        y: 224.10007990588937
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        error_handle_mode: terminated
+        height: 235
+        is_parallel: true
+        iterator_selector:
+        - '1746805617115'
+        - output
+        output_selector:
+        - '1746798461643'
+        - result
+        output_type: array[object]
+        parallel_nums: 5
+        selected: false
+        start_node_id: 1746797398965start
+        title: 搜寻家具信息
+        type: iteration
+        width: 808
+      height: 235
+      id: '1746797398965'
+      position:
+        x: 2384.4872342583353
+        y: 224.10007990588937
+      positionAbsolute:
+        x: 2384.4872342583353
+        y: 224.10007990588937
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 808
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1746797398965start
+      parentId: '1746797398965'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 2408.4872342583353
+        y: 292.1000799058894
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1746797398965'
+        model:
+          completion_params:
+            max_tokens: 19301
+          mode: chat
+          name: kimi
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        prompt_template:
+        - id: f2d46e8b-020f-472f-813f-4134f97f2a20
+          role: system
+          text: '基于以下装修需求进行专业搜索：
+
+            搜索匹配[整体风格]、[房间名称]和[项目]的建材/家具品牌及具体产品型号
+
+            查询该产品的网络评价（包括专业评测和消费者反馈）
+
+            验证环保认证信息（国内及国际标准）
+
+            收集市场价格范围及收费模式（含安装费用）
+
+            列出施工/使用注意事项（需结合[备注]要求）
+
+            输入参数：
+
+            {
+
+            "整体风格": "",
+
+            "房间名称": "",
+
+            "装修项目": "",
+
+            "具体要求": "",
+
+            "预算参考": "",
+
+            "特别备注": ""
+
+            }
+
+            要求：
+
+            推荐至少3个符合预算的品牌方案
+
+            区分进口/国产产品
+
+            包含环保等级认证信息
+
+            标注线上/线下购买渠道差异
+
+            输出结构化JSON数据
+
+            === JSON模板 ===
+
+            {
+
+            "project_info": {
+
+            "room": "餐厅",
+
+            "category": "硬装",
+
+            "material_type": "木地板"
+
+            },
+
+            "recommendations": [
+
+            {
+
+            "brand": "品牌名称",
+
+            "product_series": "产品系列",
+
+            "origin": "进口/国产",
+
+            "color_code": "#E0E0E0",
+
+            "eco_certification": ["FSC认证", "CARB-NAF认证"],
+
+            "price_range": {
+
+            "material": "500-800元/㎡",
+
+            "installation": "50-80元/㎡"
+
+            },
+
+            "user_ratings": {
+
+            "average_score": 4.7,
+
+            "review_count": 215,
+
+            "positive_keywords": ["无色差", "耐磨性好"],
+
+            "negative_keywords": ["冬季轻微收缩"]
+
+            },
+
+            "purchase_channels": [
+
+            {
+
+            "type": "线上",
+
+            "platform": ["天猫旗舰店", "京东自营"],
+
+            "service": "免费样品寄送"
+
+            },
+
+            {
+
+            "type": "线下",
+
+            "stores": ["居然之家", "红星美凯龙"],
+
+            "service": "免费量房"
+
+            }
+
+            ]
+
+            }
+
+            ],
+
+            "coordination_advice": [
+
+            "建议搭配同系列踢脚线保持整体性",
+
+            "与客厅衔接处建议使用T型压条"
+
+            ],
+
+            "precautions": [
+
+            {
+
+            "category": "施工注意",
+
+            "content": "需预留5mm伸缩缝"
+
+            },
+
+            {
+
+            "category": "保养要求",
+
+            "content": "每月打蜡保养"
+
+            }
+
+            ],
+
+            "budget_analysis": {
+
+            "material_cost": "800-1200元",
+
+            "total_estimate": "1800-2000元",
+
+            "cost_saving_tips": "选择品牌促销套餐可节省15%"
+
+            }
+
+            }
+
+            === 关键要素说明 ===
+
+            环保材料验证维度：
+
+            国内标准：ENF/E0级认证、十环认证
+
+            国际标准：FSC森林认证、CARB-NAF无醛认证
+
+            价格维度需包含：
+
+            材料单价
+
+            辅料费用
+
+            安装人工费
+
+            运输费
+
+            旧材处理费
+
+            注意事项需涵盖：
+
+            施工工艺要求
+
+            与其他建材的兼容性
+
+            季节性影响
+
+            保修条款
+
+            维护周期建议
+
+            下面是输入
+
+            {{#1746797398965.item#}}'
+        selected: false
+        title: 生成单个家具相关信息
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1746797407824'
+      parentId: '1746797398965'
+      position:
+        x: 128
+        y: 68
+      positionAbsolute:
+        x: 2512.4872342583353
+        y: 292.1000799058894
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+      zIndex: 1002
+    - data:
+        code: "import json\nimport re\n\ndef main(text: str) -> dict:\n    # 去除输入字符串中的转义字符\n\
+          \    text = text.replace('\\\\n', '').replace('\\\\\"', '\"').replace('\\\
+          \\\\\\', '\\\\')\n    \n    # 使用正则匹配最外层的{}来确保输入是一个完整的JSON对象\n    pattern\
+          \ = r'\\{.*\\}'\n    match = re.search(pattern, text, re.DOTALL)\n    \n\
+          \    if not match:\n        return {\"result\": {\"error\": \"No valid JSON\
+          \ object found\"}}  # 如果不匹配，返回错误信息\n    \n    # 提取最外层的JSON对象\n    json_str\
+          \ = match.group(0)\n    \n    # 尝试解析 JSON 字符串\n    try:\n        data =\
+          \ json.loads(json_str)\n        return {\"result\": data}  # 返回解析后的JSON数据\n\
+          \    except json.JSONDecodeError as e:\n        return {\"result\": {\"\
+          error\": str(e)}}  # 如果解析失败，返回错误信息"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1746797398965'
+        outputs:
+          result:
+            children: null
+            type: object
+        selected: false
+        title: 整理家具格式
+        type: code
+        variables:
+        - value_selector:
+          - '1746797407824'
+          - text
+          variable: text
+      height: 53
+      id: '1746798461643'
+      parentId: '1746797398965'
+      position:
+        x: 415.67873395224046
+        y: 71.37655397980825
+      positionAbsolute:
+        x: 2800.1659682105756
+        y: 295.47663388569765
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+      zIndex: 1002
+    - data:
+        code: "import os\nimport json\nimport openpyxl\nimport uuid\nimport mimetypes\n\
+          import re\nfrom typing import List, Union, Any, Dict\nfrom openpyxl.styles\
+          \ import Alignment\nfrom openpyxl.utils import get_column_letter\n\n\ndef\
+          \ save_file_as_dify_format(file_path):\n    \"\"\"\n    将给定的文件路径打包成符合Dify格式的文件对象\n\
+          \    :param file_path: 文件的完整路径\n    :return: 符合Dify格式的文件对象\n    \"\"\"\n\
+          \    # 确保文件存在\n    if not os.path.exists(file_path):\n        raise FileNotFoundError(f\"\
+          文件 {file_path} 不存在\")\n\n    # 获取文件名、扩展名、大小和MIME类型\n    file_name = os.path.basename(file_path)\n\
+          \    file_size = os.path.getsize(file_path)\n    _, file_extension = os.path.splitext(file_name)\n\
+          \    mime_type = mimetypes.guess_type(file_path)[0] or \"application/octet-stream\"\
+          \n\n    # 构建Dify格式的文件对象\n    file_output = {\n        \"dify_model_identity\"\
+          : \"__dify__file__\",\n        \"id\": None,\n        \"tenant_id\": \"\"\
+          ,\n        \"type\": \"document\" if mime_type.startswith(\"application\"\
+          ) else \"image\" if mime_type.startswith(\"image\") else \"other\",\n  \
+          \      \"transfer_method\": \"local_file\",\n        \"remote_url\": \"\"\
+          ,\n        \"related_id\": str(uuid.uuid4()),\n        \"filename\": file_name,\n\
+          \        \"name\": file_name,\n        \"extension\": file_extension,\n\
+          \        \"mime_type\": mime_type,\n        \"size\": file_size,\n     \
+          \   \"url\": f\"/tmp/workflows/{file_name}\"\n    }\n\n    return {\"file_output\"\
+          : file_output}\n\ndef flatten_json(data, parent_key='', sep='_'):\n    \"\
+          \"\"\n    将嵌套的JSON数据展平为单层字典\n    :param data: JSON数据\n    :param parent_key:\
+          \ 父级键\n    :param sep: 分隔符\n    :return: 展平后的字典\n    \"\"\"\n    items =\
+          \ []\n    if isinstance(data, dict):\n        for k, v in data.items():\n\
+          \            # 关键修改：跳过包含 error 的键（不区分大小写）\n            if 'error' in k.lower():\n\
+          \                continue\n            new_key = f\"{parent_key}{sep}{k}\"\
+          \ if parent_key else k\n            items.extend(flatten_json(v, new_key,\
+          \ sep).items())\n    elif isinstance(data, list):\n        for i, v in enumerate(data):\n\
+          \            new_key = f\"{parent_key}{sep}{i}\" if parent_key else str(i)\n\
+          \            items.extend(flatten_json(v, new_key, sep).items())\n    else:\n\
+          \        items.append((parent_key, data))\n    return dict(items)\n\n\n\
+          def deep_filter_errors(data: Any) -> Any:\n    \"\"\"\n    递归过滤所有包含错误信息的结构\n\
+          \    新增：过滤 Expecting ',' delimiter 错误模式\n    \"\"\"\n    # 定义统一错误匹配模式（同时匹配两种错误）\n\
+          \    error_pattern = re.compile(\n        r'('\n        r'\\\"error\\\"\\\
+          s*:\\s*(\".*?\"|\\d+|true|false|null|\\[.*?\\]|\\{.*?\\})'  # 原错误模式\n  \
+          \      r'|'  # 逻辑或\n        r'Expecting \\',\\' delimiter: line \\d+ column\
+          \ \\d+ \\(char \\d+\\)'  # 新增错误模式\n        r')',\n        re.DOTALL | re.IGNORECASE\n\
+          \    )\n\n    # 处理字典类型\n    if isinstance(data, dict):\n        filtered_dict\
+          \ = {}\n        for k, v in data.items():\n            # 新增：检查键值对是否包含错误描述\n\
+          \            if error_pattern.search(f'\"{k}\":{json.dumps(v)}'):\n    \
+          \            continue\n            # 原过滤逻辑...\n            filtered_value\
+          \ = deep_filter_errors(v)\n            if filtered_value is not None:\n\
+          \                filtered_dict[k] = filtered_value\n        return filtered_dict\
+          \ if filtered_dict else None\n\n    # 处理列表类型\n    elif isinstance(data,\
+          \ list):\n        filtered_list = []\n        for item in data:\n      \
+          \      # 新增：直接过滤列表中的错误字符串\n            if isinstance(item, str) and error_pattern.search(item):\n\
+          \                continue\n            # 原过滤逻辑...\n            filtered_item\
+          \ = deep_filter_errors(item)\n            if filtered_item is not None:\n\
+          \                filtered_list.append(filtered_item)\n        return filtered_list\n\
+          \n    # 处理字符串类型（关键修改部分）\n    elif isinstance(data, str):\n        # 同时清理两种错误模式\n\
+          \        cleaned_str = error_pattern.sub('', data)\n\n        # 新增：额外过滤纯错误行\n\
+          \        line_error_pattern = re.compile(\n            r'^\\s*Expecting\
+          \ \\',\\' delimiter: line \\d+ column \\d+ \\(char \\d+\\)\\s*$',\n    \
+          \        re.IGNORECASE\n        )\n        if line_error_pattern.match(data.strip()):\n\
+          \            return None\n\n        return cleaned_str.strip() if cleaned_str.strip()\
+          \ else None\n\n    # 其他类型保留\n    else:\n        return data\n\ndef filter_error_entries(data:\
+          \ List[Union[Dict, List, str]]) -> List[Union[Dict, List, str]]:\n    \"\
+          \"\"\n    主过滤函数\n    \"\"\"\n    filtered = []\n    for entry in data:\n\
+          \        processed = deep_filter_errors(entry)\n        if processed is\
+          \ not None:  # 跳过完全被过滤的条目\n            filtered.append(processed)\n    return\
+          \ filtered\n\ndef create_excel_from_json(data, save_directory, file_name):\n\
+          \    \"\"\"\n    根据JSON数据创建Excel文件\n    :param data: JSON数据（列表，每个元素是一个字典）\n\
+          \    :param save_directory: 保存目录\n    :param file_name: 文件名\n    :return:\
+          \ 生成的Excel文件路径\n    \"\"\"\n    # 创建工作簿\n    workbook = openpyxl.Workbook()\n\
+          \    sheet = workbook.active\n    sheet.title = \"数据表\"\n\n    # 如果数据是空的，直接返回\n\
+          \    if not data:\n        raise ValueError(\"输入的JSON数据为空\")\n\n    # 展平每个JSON对象\n\
+          \    flat_data_list = [flatten_json(item) for item in data]\n\n    # 获取所有可能的表头\n\
+          \    headers = set()\n    for flat_data in flat_data_list:\n        headers.update(flat_data.keys())\n\
+          \    headers = sorted(headers)\n\n    # 关键修改：过滤包含error的列名（不区分大小写）\n    filtered_headers\
+          \ = [\n        header for header in sorted(headers)\n        if \"error\"\
+          \ not in header.lower()  # 过滤条件\n    ]\n\n    # ⭐ 进一步验证：确保 filtered_headers\
+          \ 中不包含任何包含 \"error\" 的键\n    for header in filtered_headers:\n        if\
+          \ \"error\" in header.lower():\n            print(f\"警告：发现未被过滤的 error 表头\
+          \ - {header}\")\n\n    # ⭐ 添加中英文表头映射（示例映射，可按需扩展）\n    header_translations\
+          \ = {\n        # 示例字段映射\n        \"budget_analysis_cost_saving_tips\": \"\
+          预算节省提醒\",\n        \"budget_analysis_material_cost\": \"原料预算范围\",\n    \
+          \    \"budget_analysis_total_estimate\": \"总体预算\",\n        \"coordination_advice_0\"\
+          : \"搭配建议一\",\n        \"coordination_advice_1\": \"搭配建议二\",\n        \"\
+          coordination_advice_2\": \"搭配建议三\",\n        #\"error\":\"错误\",\n      \
+          \  \"precautions_0_category\":\"施工目录\",\n        \"precautions_0_content\"\
+          :\"施工注意事项\",\n        \"precautions_1_category\":\"保养目录一\",\n        \"\
+          precautions_1_content\":\"保养注意事项一\",\n        \"precautions_2_category\"\
+          : \"保养目录二\",\n        \"precautions_2_content\": \"保养注意事项二\",\n        \"\
+          precautions_3_category\": \"保养目录三\",\n        \"precautions_3_content\"\
+          : \"保养注意事项三\",\n        \"precautions_3_category\": \"保养目录四\",\n       \
+          \ \"precautions_3_content\": \"保养注意事项四\",\n        \"project_info_category\"\
+          : \"家具名称\",\n        \"project_info_material_type\": \"家具原材料\",\n      \
+          \  \"project_info_room\": \"家具所在房间\",\n\n        \"recommendations_0_brand\"\
+          : \"家具品牌一\",\n        \"recommendations_0_color_code\": \"家具颜色代码一\",\n \
+          \       \"recommendations_0_color_code_0\": \"家具颜色代码二\",\n        \"recommendations_0_color_code_1\"\
+          : \"家具颜色代码三\",\n        \"recommendations_0_color_code_2\": \"家具颜色代码四\"\
+          ,\n        \"recommendations_0_color_code_inner\": \"家具内部颜色代码\",\n     \
+          \   \"recommendations_0_color_code_outer\": \"家具外部颜色代码\",\n        \"recommendations_0_color_code_frame\"\
+          : \"框架颜色\",\n        \"recommendations_0_color_code_glass\": \"玻璃颜色\",\n\
+          \        \"recommendations_0_eco_certification_0\": \"家具环保认证一\",\n     \
+          \   \"recommendations_0_eco_certification_1\": \"家具环保认证二\",\n        \"\
+          recommendations_0_eco_certification_2\": \"家具环保认证三\",\n        \"recommendations_0_origin\"\
+          : \"家具品牌出产地\",\n        \"recommendations_0_price_range_auxiliary_materials\"\
+          : \"单位面积价格\",\n        \"recommendations_0_price_range_bookshelf\": \"书架价格范围\"\
+          ,\n        \"recommendations_0_price_range_installation\": \"安装价格单位面积价格\"\
+          ,\n        \"recommendations_0_price_range_installation_乳胶漆\": \"乳胶安装价格\"\
+          ,\n        \"recommendations_0_price_range_installation_木质软包\": \"木质软包安装价格\"\
+          ,\n        \"recommendations_0_price_range_material\": \"总体装修价格\",\n   \
+          \     \"recommendations_0_price_range_material_乳胶漆\": \"乳胶漆原料价格\",\n   \
+          \     \"recommendations_0_price_range_material_木质软包\": \"木质软包原料价格\",\n \
+          \       \"recommendations_0_price_range_old_material_disposal\": \"旧材料处理的价格范围建议\"\
+          ,\n        \"recommendations_0_price_range_single_bed\": \"单个床的价格\",\n \
+          \       \"recommendations_0_price_range_transportation\": \"运输费\",\n   \
+          \     \"recommendations_0_product_series\": \"产品系列\",\n        \"recommendations_0_purchase_channels_0_platform_0\"\
+          : \"第一个购买渠道\",\n        \"recommendations_0_purchase_channels_0_platform_1\"\
+          : \"第二个购买渠道\",\n        \"recommendations_0_purchase_channels_0_service\"\
+          : \"购买渠道提供的服务一\",\n        \"recommendations_0_purchase_channels_0_type\"\
+          : \"购买渠道种类\",\n        \"recommendations_0_purchase_channels_1_service\"\
+          : \"购买渠道提供的服务二\",\n        \"recommendations_0_purchase_channels_1_stores_0\"\
+          : \"第三个购买渠道\",\n        \"recommendations_0_purchase_channels_1_stores_1\"\
+          : \"第四个购买渠道\",\n        \"recommendations_0_purchase_channels_1_stores_2\"\
+          : \"第五个购买渠道\",\n        \"recommendations_0_purchase_channels_1_type\":\
+          \ \"购买渠道种类\",\n        \"recommendations_0_user_ratings_average_score\"\
+          : \"使用用户平均评分\",\n        \"recommendations_0_user_ratings_negative_keywords_0\"\
+          : \"用户差评关键词一\",\n        \"recommendations_0_user_ratings_positive_keywords_0\"\
+          : \"用户好评关键词一\",\n        \"recommendations_0_user_ratings_positive_keywords_1\"\
+          : \"用户好评关键词二\",\n        \"recommendations_0_user_ratings_positive_keywords_2\"\
+          : \"用户差评关键词三\",\n        \"recommendations_0_user_ratings_review_count\"\
+          : \"用户评论数\",\n\n        \"recommendations_1_brand\": \"家具品牌二\",\n      \
+          \  \"recommendations_1_color_code\": \"家具颜色代码一\",\n        \"recommendations_1_color_code_0\"\
+          : \"家具颜色代码二\",\n        \"recommendations_1_color_code_1\": \"家具颜色代码三\"\
+          ,\n        \"recommendations_1_color_code_2\": \"家具颜色代码四\",\n        \"\
+          recommendations_1_color_code_inner\": \"家具内部颜色代码\",\n        \"recommendations_1_color_code_outer\"\
+          : \"家具外部颜色代码\",\n        \"recommendations_1_color_code_frame\":\"框架颜色\"\
+          ,\n        \"recommendations_1  _color_code_glass\": \"玻璃颜色\",\n       \
+          \ \"recommendations_1_eco_certification_0\": \"家具环保认证一\",\n        \"recommendations_1_eco_certification_1\"\
+          : \"家具环保认证二\",\n        \"recommendations_1_eco_certification_2\": \"家具环保认证三\"\
+          ,\n        \"recommendations_1_origin\": \"家具品牌出产地\",\n        \"recommendations_1_price_range_auxiliary_materials\"\
+          : \"单位面积价格\",\n        \"recommendations_1_price_range_bookshelf\": \"书架价格范围\"\
+          ,\n        \"recommendations_1_price_range_installation\": \"安装价格单位面积价格\"\
+          ,\n        \"recommendations_1_price_range_installation_乳胶漆\": \"乳胶安装价格\"\
+          ,\n        \"recommendations_1_price_range_installation_木质软包\": \"木质软包安装价格\"\
+          ,\n        \"recommendations_1_price_range_material\": \"总体装修价格\",\n   \
+          \     \"recommendations_1_price_range_material_乳胶漆\": \"乳胶漆原料价格\",\n   \
+          \     \"recommendations_1_price_range_material_木质软包\": \"木质软包原料价格\",\n \
+          \       \"recommendations_1_price_range_old_material_disposal\": \"旧材料处理的价格范围建议\"\
+          ,\n        \"recommendations_1_price_range_single_bed\": \"单个床的价格\",\n \
+          \       \"recommendations_1_price_range_transportation\": \"运输费\",\n   \
+          \     \"recommendations_1_product_series\": \"产品系列\",\n        \"recommendations_1_purchase_channels_0_platform_0\"\
+          : \"第一个购买渠道\",\n        \"recommendations_1_purchase_channels_0_platform_1\"\
+          : \"第二个购买渠道\",\n        \"recommendations_1_purchase_channels_0_service\"\
+          : \"购买渠道提供的服务一\",\n        \"recommendations_1_purchase_channels_0_type\"\
+          : \"购买渠道种类\",\n        \"recommendations_1_purchase_channels_1_service\"\
+          : \"购买渠道提供的服务二\",\n        \"recommendations_1_purchase_channels_1_stores_0\"\
+          : \"第三个购买渠道\",\n        \"recommendations_1_purchase_channels_1_stores_1\"\
+          : \"第四个购买渠道\",\n        \"recommendations_1_purchase_channels_1_stores_2\"\
+          : \"第五个购买渠道\",\n        \"recommendations_1_purchase_channels_1_type\":\
+          \ \"购买渠道种类\",\n        \"recommendations_1_user_ratings_average_score\"\
+          : \"使用用户平均评分\",\n        \"recommendations_1_user_ratings_negative_keywords_0\"\
+          : \"用户差评关键词一\",\n        \"recommendations_1_user_ratings_positive_keywords_0\"\
+          : \"用户好评关键词一\",\n        \"recommendations_1_user_ratings_positive_keywords_1\"\
+          : \"用户好评关键词二\",\n        \"recommendations_1_user_ratings_positive_keywords_2\"\
+          : \"用户差评关键词三\",\n        \"recommendations_1_user_ratings_review_count\"\
+          : \"用户评论数\",\n\n        \"recommendations_2_brand\": \"家具品牌三\",\n      \
+          \  \"recommendations_2_color_code\": \"家具颜色代码一\",\n        \"recommendations_2_color_code_0\"\
+          : \"家具颜色代码二\",\n        \"recommendations_2_color_code_1\": \"家具颜色代码三\"\
+          ,\n        \"recommendations_2_color_code_2\": \"家具颜色代码四\",\n        \"\
+          recommendations_2_color_code_inner\": \"家具内部颜色代码\",\n        \"recommendations_2_color_code_outer\"\
+          : \"家具外部颜色代码\",\n        \"recommendations_2_eco_certification_0\": \"家具环保认证一\"\
+          ,\n        \"recommendations_2_eco_certification_1\": \"家具环保认证二\",\n   \
+          \     \"recommendations_2_eco_certification_2\": \"家具环保认证三\",\n        \"\
+          recommendations_2_origin\": \"家具品牌出产地\",\n        \"recommendations_2_price_range_auxiliary_materials\"\
+          : \"单位面积价格\",\n        \"recommendations_2_price_range_bookshelf\": \"书架价格范围\"\
+          ,\n        \"recommendations_2_price_range_installation\": \"安装价格单位面积价格\"\
+          ,\n        \"recommendations_2_price_range_installation_乳胶漆\": \"乳胶安装价格\"\
+          ,\n        \"recommendations_2_price_range_installation_木质软包\": \"木质软包安装价格\"\
+          ,\n        \"recommendations_2_price_range_material\": \"总体装修价格\",\n   \
+          \     \"recommendations_2_price_range_material_乳胶漆\": \"乳胶漆原料价格\",\n   \
+          \     \"recommendations_2_price_range_material_木质软包\": \"木质软包原料价格\",\n \
+          \       \"recommendations_2_price_range_old_material_disposal\": \"旧材料处理的价格范围建议\"\
+          ,\n        \"recommendations_2_price_range_single_bed\": \"单个床的价格\",\n \
+          \       \"recommendations_2_price_range_transportation\": \"运输费\",\n   \
+          \     \"recommendations_2_product_series\": \"产品系列\",\n        \"recommendations_2_purchase_channels_0_platform_0\"\
+          : \"第一个购买渠道\",\n        \"recommendations_2_purchase_channels_0_platform_1\"\
+          : \"第二个购买渠道\",\n        \"recommendations_2_purchase_channels_0_service\"\
+          : \"购买渠道提供的服务一\",\n        \"recommendations_2_purchase_channels_0_type\"\
+          : \"购买渠道种类\",\n        \"recommendations_2_purchase_channels_1_service\"\
+          : \"购买渠道提供的服务二\",\n        \"recommendations_2_purchase_channels_1_stores_0\"\
+          : \"第三个购买渠道\",\n        \"recommendations_2_purchase_channels_1_stores_1\"\
+          : \"第四个购买渠道\",\n        \"recommendations_2_purchase_channels_1_stores_2\"\
+          : \"第五个购买渠道\",\n        \"recommendations_2_purchase_channels_1_type\":\
+          \ \"购买渠道种类\",\n        \"recommendations_2_user_ratings_average_score\"\
+          : \"使用用户平均评分\",\n        \"recommendations_2_user_ratings_negative_keywords_0\"\
+          : \"用户差评关键词一\",\n        \"recommendations_2_user_ratings_positive_keywords_0\"\
+          : \"用户好评关键词一\",\n        \"recommendations_2_user_ratings_positive_keywords_1\"\
+          : \"用户好评关键词二\",\n        \"recommendations_2_user_ratings_positive_keywords_2\"\
+          : \"用户差评关键词三\",\n        \"recommendations_2_user_ratings_review_count\"\
+          : \"用户评论数\"\n\n        # 请在此处继续补充您的字段翻译...\n    }\n\n    # ⭐ 翻译表头\n    translated_headers\
+          \ = [header_translations.get(h, h) for h in filtered_headers]  # 未映射的字段保持原样\n\
+          \n    # 写入表头\n    sheet.append(translated_headers)\n\n    # 设置表头居中且不换行\n\
+          \    for col_idx, cell in enumerate(sheet[1], 1):\n        # 中文字符宽度计算（直接内联处理）\n\
+          \        header_text = str(cell.value)\n        adjusted_length = 0\n  \
+          \      for char in header_text:\n            if '\\u4e00' <= char <= '\\\
+          u9fff' or '\\u3000' <= char <= '\\u303f':  # 中日韩字符及中文标点\n              \
+          \  adjusted_length += 2.2  # 每个中文字符按2.2个英文字符宽度计算\n            else:\n  \
+          \              adjusted_length += 1\n\n        # 设置列宽初始值（表头长度*1.3 + 缓冲）\n\
+          \        sheet.column_dimensions[get_column_letter(col_idx)].width = adjusted_length\
+          \ * 1.3 + 3\n\n        # 设置居中样式\n        cell.alignment = Alignment(\n \
+          \           horizontal='center',\n            vertical='center',\n     \
+          \       wrap_text=False\n        )\n\n    # 写入数据\n    for flat_data in flat_data_list:\n\
+          \        row = [flat_data.get(header, \"\") for header in filtered_headers]\n\
+          \        sheet.append(row)\n\n    # 设置数据行换行\n    for row in sheet.iter_rows(min_row=2):\n\
+          \        for cell in row:\n            cell.alignment = Alignment(wrap_text=True)\n\
+          \n    # 调整列宽（整合中文处理）\n    for column in sheet.columns:\n        col_letter\
+          \ = column[0].column_letter\n        max_length = 0\n\n        # 处理表头（已经设置过，这里只需要取当前值）\n\
+          \        header_cell = column[0]\n        current_width = sheet.column_dimensions[col_letter].width\n\
+          \n        # 计算数据行最大长度（带中文处理）\n        for cell in column[1:]:\n        \
+          \    if cell.value:\n                cell_length = 0\n                for\
+          \ line in str(cell.value).split('\\n'):\n                    line_length\
+          \ = 0\n                    for char in line:\n                        if\
+          \ '\\u4e00' <= char <= '\\u9fff' or '\\u3000' <= char <= '\\u303f':\n  \
+          \                          line_length += 2.2\n                        else:\n\
+          \                            line_length += 1\n                    if line_length\
+          \ > max_length:\n                        max_length = line_length\n\n  \
+          \      # 最终列宽取表头和数据最大值\n        final_width = max(current_width, max_length\
+          \ * 1.1 + 2)  # 数据行增加10%余量\n        sheet.column_dimensions[col_letter].width\
+          \ = min(final_width, 50)  # 限制最大宽度\n\n    # 调整行高（如果有换行内容）\n    for row in\
+          \ sheet.iter_rows():\n        max_height = 12.5  # 默认行高（Excel的默认行高为12.5）\n\
+          \        for cell in row:\n            # 判断单元格是否有换行\n            if cell.value\
+          \ and isinstance(cell.value, str) and '\\n' in cell.value:\n           \
+          \     lines = cell.value.count('\\n') + 1  # 计算行数\n                row_height\
+          \ = 12.5 * lines  # 每行高度为12.5\n                if row_height > max_height:\n\
+          \                    max_height = row_height\n        if max_height > 12.5:\n\
+          \            sheet.row_dimensions[row[0].row].height = max_height\n\n  \
+          \  # 确保保存目录存在\n    if not os.path.exists(save_directory):\n        os.makedirs(save_directory)\n\
+          \n    # 保存文件\n    output_file = os.path.join(save_directory, file_name)\n\
+          \    workbook.save(output_file)\n    return output_file\n\ndef main(json_array):\n\
+          \    \"\"\"\n    主函数，处理JSON数组，创建Excel文件，并返回Dify格式的文件对象\n    :param json_array:\
+          \ 输入的JSON数组（列表）\n    :return: 符合Dify格式的文件对象\n    \"\"\"\n    # 过滤数据 -> 生成Excel\
+          \ -> 打包文件\n    filtered_data = filter_error_entries(json_array)\n\n    #\
+          \ 检查输入是否为列表\n    if not isinstance(json_array, list):\n        raise TypeError(\"\
+          输入的JSON数据必须是列表\")\n\n    # 定义保存路径和文件名\n    save_directory = \"/var/sandbox/sandbox-python/usr/local/storage/workflows/\"\
+          \n    file_name = \"output.xlsx\"\n\n    # 创建Excel文件\n    excel_file_path\
+          \ = create_excel_from_json(json_array, save_directory, file_name)\n\n  \
+          \  # 返回Dify格式的文件对象\n    return save_file_as_dify_format(excel_file_path)"
+        code_language: python3
+        desc: ''
+        outputs:
+          file_output:
+            children: null
+            type: file
+        selected: false
+        title: 整理并生成Excel
+        type: code
+        variables:
+        - value_selector:
+          - '1746797398965'
+          - output
+          variable: json_array
+      height: 53
+      id: '1746803669588'
+      position:
+        x: 3518.0437154428323
+        y: 281.6106012786461
+      positionAbsolute:
+        x: 3518.0437154428323
+        y: 281.6106012786461
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1746803669588'
+          - file_output
+          variable: file_output
+        selected: false
+        title: 结束
+        type: end
+      height: 89
+      id: '1746804995053'
+      position:
+        x: 4036.4569079943326
+        y: 365.974691616081
+      positionAbsolute:
+        x: 4036.4569079943326
+        y: 365.974691616081
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        error_handle_mode: terminated
+        height: 281
+        is_parallel: true
+        iterator_selector:
+        - '1746806049812'
+        - rooms
+        output_selector:
+        - '1746806259993'
+        - result
+        output_type: array[object]
+        parallel_nums: 5
+        selected: false
+        start_node_id: 1746805617115start
+        title: 搜寻房间信息
+        type: iteration
+        width: 899
+      height: 281
+      id: '1746805617115'
+      position:
+        x: 1092.4782246118612
+        y: 144.171598935898
+      positionAbsolute:
+        x: 1092.4782246118612
+        y: 144.171598935898
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 899
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1746805617115start
+      parentId: '1746805617115'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1116.4782246118612
+        y: 212.171598935898
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1746805617115'
+        model:
+          completion_params: {}
+          mode: chat
+          name: kimi
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        prompt_template:
+        - id: eeb022a0-a2b7-45e2-81d6-5f04d95080e1
+          role: system
+          text: "你是一个专业室内设计师，根据概览信息生成单个房间的详细方案。请严格遵循：\n用标准JSON格式，结构如下：\n{\n  \"overall_style\"\
+            : \"风格名称\",\n  \"rooms\": [\n    {\n      \"name\": \"房间名称\",\n      \"\
+            hardware\": [\n        {\"item\":\"项目名\", \"desc\":\"材质/颜色/工艺细节/预算\",\
+            \ \"note\":\"可选技术说明\"}\n      ],\n      \"software\": [\n        {\"item\"\
+            :\"物品名\", \"desc\":\"尺寸/款式/可选智能家居/预算\", \"match_note\":\"风格搭配逻辑\"}\n \
+            \     ]\n    }\n  ]\n}\n硬装范围\n墙面：涂料、壁纸、瓷砖、石材等。\n地面：地板、瓷砖、地毯等。\n天花板：吊顶、石膏板、灯具等。\n\
+            门窗：材质、颜色、开启方式等。\n定制柜体：衣柜、书柜、橱柜等。\n水电改造：电路、水管布局等。\n卫浴设施：浴缸、淋浴、马桶、洗手盆等。\n\
+            软装范围\n智能家居：智能灯光、智能窗帘、智能安防等。\n家具：沙发、床、餐桌、椅子等。\n灯具：吊灯、台灯、壁灯等。\n窗帘：材质、颜色、款式等。\n\
+            装饰画：风格、尺寸等。\n地毯：材质、颜色、图案等。\n绿植：种类、摆放位置等。\n强制要求\n所有尺寸单位统一为厘米或平方米。\n颜色值用HEX编码（如#FFFFFF）。\n\
+            禁止嵌套超过2层。\n每个房间至少包含3项硬装+2项软装。\n5. **强制要求**  \n- 所有尺寸单位统一为厘米或平方米  \n- 颜色值用HEX编码(如#FFFFFF)\
+            \  \n- 禁止嵌套超过2层  \n- 房间至少包含3项硬装+2项软装\n下面是房间信息\n{{#1746805617115.item#}}"
+        selected: false
+        title: 生成单个房间标准方案
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1746805939176'
+      parentId: '1746805617115'
+      position:
+        x: 128
+        y: 68
+      positionAbsolute:
+        x: 1220.4782246118612
+        y: 212.171598935898
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+      zIndex: 1002
+    - data:
+        desc: ''
+        instruction: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: kimi
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        parameters:
+        - description: 使用结构化整理每个房间内容
+          name: rooms
+          required: false
+          type: array[object]
+        query:
+        - '1746793901295'
+        - text
+        reasoning_mode: prompt
+        selected: true
+        title: 参数提取器 （结构化提取与格式转换）
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1746806049812'
+      position:
+        x: 645.1436944058272
+        y: 224.10007990588937
+      positionAbsolute:
+        x: 645.1436944058272
+        y: 224.10007990588937
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\nimport re\n\ndef main(text: str) -> dict:\n    # 去除输入字符串中的转义字符\n\
+          \    text = text.replace('\\\\n', '').replace('\\\\\"', '\"').replace('\\\
+          \\\\\\', '\\\\')\n    \n    # 使用正则匹配最外层的{}来确保输入是一个完整的JSON对象\n    pattern\
+          \ = r'\\{.*\\}'\n    match = re.search(pattern, text, re.DOTALL)\n    \n\
+          \    if not match:\n        return {\"result\": \"error\"}  # 如果不匹配，返回错误信息\n\
+          \    \n    # 提取最外层的JSON对象\n    json_str = match.group(0)\n    \n    # 尝试解析\
+          \ JSON 字符串\n    try:\n        data = json.loads(json_str)\n        \n  \
+          \      # 提取出每个房间的详细信息\n        arrayjson = []\n        if \"overall_style\"\
+          \ in data and \"rooms\" in data:\n            overall_style = data[\"overall_style\"\
+          ]\n            for room in data[\"rooms\"]:\n                room_name =\
+          \ room.get(\"name\", \"\")\n                for hardware in room.get(\"\
+          hardware\", []):\n                    hardware_info = {\n              \
+          \          \"overall_style\": overall_style,\n                        \"\
+          room_name\": room_name,\n                        **hardware\n          \
+          \          }\n                    arrayjson.append(hardware_info)\n    \
+          \            for software in room.get(\"software\", []):\n             \
+          \       software_info = {\n                        \"overall_style\": overall_style,\n\
+          \                        \"room_name\": room_name,\n                   \
+          \     **software\n                    }\n                    arrayjson.append(software_info)\n\
+          \        \n        # 最终结果\n        result = {\"result\": arrayjson}\n  \
+          \      return result\n    except json.JSONDecodeError as e:\n        return\
+          \ {\"result\": \"error\"}  # 如果解析失败，返回错误信息\n"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1746805617115'
+        outputs:
+          result:
+            children: null
+            type: array[object]
+        selected: false
+        title: 整理房间格式
+        type: code
+        variables:
+        - value_selector:
+          - '1746805939176'
+          - text
+          variable: text
+      height: 53
+      id: '1746806259993'
+      parentId: '1746805617115'
+      position:
+        x: 488.61325520313017
+        y: 93.73329781960476
+      positionAbsolute:
+        x: 1581.0914798149913
+        y: 237.90489675550276
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 26001
+          mode: chat
+          name: kimi
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        prompt_template:
+        - id: ed4c71d3-f335-41c3-911f-905924ca3459
+          role: system
+          text: "我有一个室内平面布局图，总预算范围是 \n{{#1746793690951.budget#}}，设计思路是{{#1746793690951.design#}}。请根据这张平面布局图和总预算，还有设计思路，按照以下格式输出每个房间的功能、建议及预算：\n\
+            总预算：\n房间名称（面积）\n功能：该房间主要用途，如休闲、会客、娱乐等\n建议：对房间的设计建议，包括颜色搭配（如浅灰 / 白色系）、灯光设计（如无主灯设计）、装饰元素（如墙面装饰画、镜面、背景墙材质等）以及家具布局（如定制收纳家具、简约餐桌等）\n\
+            预算：该房间的大致预算范围，以万元为单位，用区间形式呈现，例如 0.34 万到 1.0 万元\n房间名称（面积）\n功能：该房间主要用途，如用餐等\n\
+            建议：对房间的设计建议，包括颜色搭配、灯光设计、装饰元素以及家具布局等\n预算：该房间的大致预算范围，以万元为单位，用区间形式呈现\n房间名称（面积）\n\
+            功能：[……]\n建议：[……]\n预算：[……]\n（依次按照平面布局图的房间顺序，如客厅、餐厅、厨房等，输出每个房间的内容，确保所有房间的预算综合在总预算范围内）\n\
+            注：房间名称、面积、功能等信息都需根据平面布局图来准确填写。\n注：只输出格式内的内容，不要输出多余的文字！！！"
+        selected: false
+        title: 识别户型图
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+            variable_selector:
+            - '1746793690951'
+            - floor_plan
+          enabled: true
+      height: 89
+      id: '1746973196324'
+      position:
+        x: -242.44993401127095
+        y: 224.10007990588937
+      positionAbsolute:
+        x: -242.44993401127095
+        y: 224.10007990588937
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: 63.14154308921377
+      y: 257.4650885566639
+      zoom: 0.43527528164806223
